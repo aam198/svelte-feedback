@@ -1,63 +1,35 @@
 <script>
-	let firstName ="Allie";
-  let lastName = "Martz";
-  let color = 'blue';
-  let showText = false;
-  let users = [
+	
+
+  let feedback = [
     {
-      id: '1',
-      name: 'John'
+      id: 1,
+      rating: 10,
+      text: 'Culpa et elit irure ut esse enim elit minim anim quis ex occaecat. Ad eu irure enim irure culpa qui esse cillum Lorem voluptate qui ullamco. Esse excepteur aliquip eiusmod dolor sunt culpa Lorem cupidatat. Magna mollit fugiat deserunt veniam esse aute et. Proident ullamco cupidatat id duis commodo eiusmod duis velit proident do nostrud exercitation duis.'
     },
     {
-      id: '2',
-      name: 'Sara'
+      id: 2, 
+      rating: 8,
+      text: 'Nostrud duis tempor est dolor. Eiusmod adipisicing nulla reprehenderit ea aute Lorem nostrud laboris. Proident qui est ipsum cillum dolor enim. Aliquip deserunt velit elit occaecat do labore tempor eu commodo culpa pariatur minim.'
     },
     {
-      id: '3',
-      name: 'Bob'
-    }
+      id: 3, 
+      rating: 9,
+      text: 'Nostrud duis tempor est dolor. Eiusmod adipisicing nulla reprehenderit ea aute Lorem nostrud laboris. Proident qui est ipsum cillum dolor enim. Aliquip deserunt velit elit occaecat do labore tempor eu commodo culpa pariatur minim.'
+    },
+    {
+      id: 4,
+      rating: 3,
+      text: 'Culpa et elit irure ut esse enim elit minim anim quis ex occaecat. Ad eu irure enim irure culpa qui esse cillum Lorem voluptate qui ullamco. Esse excepteur aliquip eiusmod dolor sunt culpa Lorem cupidatat. Magna mollit fugiat deserunt veniam esse aute et. Proident ullamco cupidatat id duis commodo eiusmod duis velit proident do nostrud exercitation duis.'
+    },
 
   ]
-
-  $: name = firstName + ' ' + lastName; 
-
-  const toggle = () => {
-    color = color === 'blue' ? 'red' : 'blue';
-    showText = !showText;
-    users = [...users, {id: '4', name: 'Jen'}, {id: '5', name: 'Karly'}]
-  }
 </script>
 
 <main>
-	<h1 style="color: {color}">Hello {name}!</h1>
-  {#if showText}
-	  <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-  {/if}
-  <button on:click={toggle}>Click</button>
-
-  {#each users as user (user.id)}
-  <h3>{user.id}: {user.name}</h3>
-  {/each}
+	<h1>Welcome!</h1>
 </main>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
 </style>
