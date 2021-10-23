@@ -1,5 +1,5 @@
 <script>
-	
+  import FeedbackList from './components/FeedbackList.svelte';
 
   let feedback = [
     {
@@ -28,6 +28,7 @@
 
 <main>
 	<h1>Welcome!</h1>
+  <FeedbackList {feedback} />
 </main>
 
 <style>
