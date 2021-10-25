@@ -1,8 +1,14 @@
-
-
 :root{
-  --bkg-clr: #202142;
+  --bkg-clr: 217deg 50% 7%;
+  --shadow-color: 217deg 35% 1%;
+
+  --card-text: hsl(0deg 0% 92%);
+
+  --rating-clr: 180deg 47% 56%;
+
+  --close: 355deg 87% 66%;
 }
+
 
 *{
   box-sizing: border-box;
@@ -12,7 +18,7 @@
 
 body {
 	color: #fff;
-  background-color: var(--bkg-clr);
+  background-color: hsl(var(--bkg-clr));
   line-height: 1.6;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }

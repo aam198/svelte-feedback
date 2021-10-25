@@ -7,7 +7,6 @@
 </script>
 
 {#each feedback as fb (fb.id)}
-  <h3>{fb.text}</h3>
   <FeedbackItem item={fb} />
 {/each}
 Feedback List

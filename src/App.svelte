@@ -27,10 +27,9 @@
 </script>
 
 <main>
-	<h1>Welcome!</h1>
   <FeedbackList {feedback} />
 </main>
 
 <style>
-
+  
 </style>
