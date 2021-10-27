@@ -22,12 +22,17 @@
       rating: 3,
       text: 'Culpa et elit irure ut esse enim elit minim anim quis ex occaecat. Ad eu irure enim irure culpa qui esse cillum Lorem voluptate qui ullamco. Esse excepteur aliquip eiusmod dolor sunt culpa Lorem cupidatat. Magna mollit fugiat deserunt veniam esse aute et. Proident ullamco cupidatat id duis commodo eiusmod duis velit proident do nostrud exercitation duis.'
     },
-
   ]
+
+  const deleteFeedback = (e) => {
+    const itemId= e.detail
+    feedback = feedback.filter((item) => item.id != itemId)
+  }
+  
 </script>
 
-<main>
-  <FeedbackList {feedback} />
+<main class="container">
+  <FeedbackList {feedback} on:delete-feedback={deleteFeedback} />
 </main>
 
 <style>
