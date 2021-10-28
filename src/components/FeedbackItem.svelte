@@ -21,6 +21,7 @@
 </Card>
 
 
+
 <style>
   .rating-display{
     position: absolute;
