@@ -49,14 +49,19 @@
     color: hsl(var(--close));
     font-size: 18px;
     position: absolute;
-    top: 10px;
-    right: 20px;
+    top: 6px;
+    right: 16px;
     cursor: pointer;
     background: none;
     border: 0;
+    border-radius: 55%;
+    transition: transform 300ms ease-in,  color 200ms ease-in;
   }
   .close:hover{
-    color: #f67d87
+    color: hsl(355 68% 59%);
+    transform: scale(1.2);
+    
+    
   }
 
   .close:active{
