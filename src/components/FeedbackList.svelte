@@ -1,7 +1,7 @@
 <script>
   import Card from './Card.svelte'
   import { createEventDispatcher} from 'svelte'
-  export let feedback= []
+  export let feedback = []
 
   console.log(feedback)
 
