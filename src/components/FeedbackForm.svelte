@@ -1,5 +1,9 @@
 <script>
 import Card from './Card.svelte';
+import Button from './Button.svelte';
+
+
+
 </script>
 
 <Card>
@@ -11,13 +15,14 @@ import Card from './Card.svelte';
 
     <div class="input-group">
       <input type="text" placeholder="Tell us something that keeps you coming back">
-      <button>Send</button>
+      <Button style="secondary" type="submit">Send</Button>
     </div>
   </form>
 </Card>
 
 
 <style>
+
 
   header{
     max-width: 400px;
@@ -29,7 +34,7 @@ import Card from './Card.svelte';
     text-align:center;
     font-weight: 600;
   }
-  
+
   .input-group{
     display: flex;
     flex-direction: row;
@@ -55,7 +60,7 @@ import Card from './Card.svelte';
     font-size: 16px;
     background: transparent;
     color: var(--card-text);
-    margin-top: 0.5rem;
+    margin-top: 0.7rem;
   }
 
   

@@ -1,4 +1,5 @@
-
+<script>
+</script>
 
 <div class="card">
   <slot></slot>
@@ -15,4 +16,5 @@
     font-family: 'Rubik', sans-serif;
     filter: drop-shadow(2.1px 4.2px 6.2px hsl(var(--shadow-color) / 0.73));
   }
+  
 </style>

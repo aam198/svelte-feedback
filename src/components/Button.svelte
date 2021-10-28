@@ -1,8 +1,45 @@
 <script>
-
+  export let style = 'primary'
+  export let type = 'button'
+  export let disabled = false
 </script>
 
 
 
 
-<button></button>
+<button {type} {disabled} class={style}>
+<slot></slot>
+
+</button>
+
+<style>
+  button{
+    color: hsl(var(--bkg-clr));
+    border: 0;
+    padding: 0.6rem 0.8rem;
+    border-radius: 4px;
+    width: 6rem;
+    margin: 0.5rem 0.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+  }
+
+  .primary{
+    background-color: #202142;
+  }
+
+  .secondary{
+    background: #ff6a95;
+  }
+
+  button:hover{
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+
+  button:disabled:hover{
+    transform: scale(1);
+    opacity: 1;
+  }
+
+</style>
