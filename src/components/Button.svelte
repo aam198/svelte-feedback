@@ -22,10 +22,11 @@
     margin: 0.5rem 0.5rem;
     height: 2.5rem;
     cursor: pointer;
+    font-size: 1.17rem;
   }
 
   .primary{
-    background-color: #202142;
+    background-color: hsl(var(--rating-clr));
   }
 
   .secondary{
@@ -37,9 +38,20 @@
     opacity: 0.9;
   }
 
+  button:active{
+    background-color: hsl(var(--rating-clr));
+    transform: scale(0.95);
+  }
+
+  button:disabled{
+    background-color: hsl(var(--rating-clr));
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
   button:disabled:hover{
     transform: scale(1);
-    opacity: 1;
+    opacity: 0.4;
   }
 
 </style>

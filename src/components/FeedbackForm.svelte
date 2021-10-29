@@ -2,6 +2,8 @@
 import Card from './Card.svelte';
 import Button from './Button.svelte';
 
+let text = ''
+let btnDisabled = false
 
 
 </script>
@@ -15,7 +17,7 @@ import Button from './Button.svelte';
 
     <div class="input-group">
       <input type="text" placeholder="Tell us something that keeps you coming back">
-      <Button style="secondary" type="submit">Send</Button>
+      <Button type="submit" disabled = {btnDisabled}>Send</Button>
     </div>
   </form>
 </Card>
