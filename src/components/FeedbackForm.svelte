@@ -2,9 +2,21 @@
 import Card from './Card.svelte';
 import Button from './Button.svelte';
 
-let text = ''
-let btnDisabled = false
+let text = '';
+let btnDisabled = true;
+let min = 10;
+let message
 
+const handleInput = () => {
+  if(text.trim().length <= min){
+    message = `Text must be at least ${min} characters` ;
+    btnDisabled = true;
+  }
+  else {
+    message = null;
+    btnDisabled = false;
+  }
+}
 
 </script>
 
@@ -16,9 +28,14 @@ let btnDisabled = false
     </header>
 
     <div class="input-group">
-      <input type="text" placeholder="Tell us something that keeps you coming back">
+      <input type="text" on:input={handleInput} bind:value= {text} placeholder="Tell us something that keeps you coming back">
       <Button type="submit" disabled = {btnDisabled}>Send</Button>
     </div>
+    {#if message}
+      <div class="message">
+        {message}
+      </div>
+    {/if}
   </form>
 </Card>
 
@@ -65,12 +82,16 @@ let btnDisabled = false
     margin-top: 0.7rem;
   }
 
-  
-
   input:focus{
     outline: none;
   }
 
+  .message{
+    text-align:center;
+    padding-top: 0.5rem;
+    color: var(--card-text);
+    opacity: 0.8;
+  }
   
 
 </style>
