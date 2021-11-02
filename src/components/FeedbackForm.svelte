@@ -5,16 +5,19 @@ import Button from './Button.svelte';
 let text = '';
 let btnDisabled = true;
 let min = 10;
-let message
+let message;
+
+const messageText = document.getElementsByClassName("message");
 
 const handleInput = () => {
   if(text.trim().length <= min){
     message = `Text must be at least ${min} characters` ;
     btnDisabled = true;
   }
-  else {
-    message = null;
+  else if (text.length === 0 || text.length === null){
+    message = ' ';
     btnDisabled = false;
+    messageText.classList.add("hidden");
   }
 }
 
@@ -36,6 +39,7 @@ const handleInput = () => {
         {message}
       </div>
     {/if}
+    
   </form>
 </Card>
 
@@ -89,8 +93,9 @@ const handleInput = () => {
   .message{
     text-align:center;
     padding-top: 0.5rem;
-    color: var(--card-text);
+    color: hsl(var(--close)/0.75);
     opacity: 0.8;
+    font-size: 0.8rem;
   }
   
 
