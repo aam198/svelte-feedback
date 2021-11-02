@@ -7,23 +7,20 @@ let btnDisabled = true;
 let min = 10;
 let message;
 
-const messageText = document.getElementsByClassName("message");
 
-// update the className.add
 const handleInput = () => {
   if(text.trim().length <= min){
     console.log(text.length);
     message = `Text must be at least ${min} characters` ;
     btnDisabled = true;
 
-    if (text.length === 1){
-      message = 'Please enter a review';
-      btnDisabled = false;
-      messageText.className.add('hidden');
+    if (text.length <= 1){
+      message = ' ';
+      btnDisabled = true;
      }
   }
   else{
-    message = 'Please enter a review';
+    message = ' ';
     btnDisabled = false;
   }
 }
