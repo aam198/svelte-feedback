@@ -9,15 +9,22 @@ let message;
 
 const messageText = document.getElementsByClassName("message");
 
+// update the className.add
 const handleInput = () => {
   if(text.trim().length <= min){
+    console.log(text.length);
     message = `Text must be at least ${min} characters` ;
     btnDisabled = true;
+
+    if (text.length === 1){
+      message = 'Please enter a review';
+      btnDisabled = false;
+      messageText.className.add('hidden');
+     }
   }
-  else if (text.length === 0 || text.length === null){
-    message = ' ';
+  else{
+    message = 'Please enter a review';
     btnDisabled = false;
-    messageText.classList.add("hidden");
   }
 }
 
