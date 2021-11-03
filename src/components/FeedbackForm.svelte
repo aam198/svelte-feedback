@@ -14,7 +14,7 @@ const handleInput = () => {
     message = `Text must be at least ${min} characters` ;
     btnDisabled = true;
 
-    if (text.length <= 1){
+    if (text.length == 1){
       message = ' ';
       btnDisabled = true;
      }
@@ -57,7 +57,7 @@ const handleInput = () => {
   }
 
   header h2{
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     text-align:center;
     font-weight: 600;
   }
@@ -68,7 +68,7 @@ const handleInput = () => {
     align-items: center;
     border: 2px solid hsl(var(--bkg-clr)/.5);
     box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-    padding: 6px 10px;
+    padding: 4px 10px;
     border-radius:15px;
     margin-top: 15px;
     color: var(--card-text);
@@ -81,10 +81,14 @@ const handleInput = () => {
     background-color: hsl(var(--bkg-clr)/0.6);
   }
 
+  input::placeholder{
+    font-size: 1rem;
+  }
+
   input{
     flex-grow: 2;
     border: none;
-    font-size: 16px;
+    font-size: 1.1rem;
     background: transparent;
     color: var(--card-text);
     margin-top: 0.7rem;
