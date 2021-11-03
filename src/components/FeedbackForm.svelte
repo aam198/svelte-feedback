@@ -1,8 +1,10 @@
 <script>
 import Card from './Card.svelte';
 import Button from './Button.svelte';
+import RatingSelect from './RatingSelect.svelte'
 
 let text = '';
+let rating = 10;
 let btnDisabled = true;
 let min = 10;
 let message;
@@ -32,6 +34,9 @@ const handleInput = () => {
     <!-- Rating Select -->
     <header>
       <h2>How would you rate your service with us?</h2>
+
+      <RatingSelect />
+
     </header>
 
     <div class="input-group">
