@@ -1,8 +1,11 @@
 <script>
 import {v4 as uuidv4} from 'uuid'
+import { createEventDispatcher } from 'svelte'
 import Card from './Card.svelte';
 import Button from './Button.svelte';
 import RatingSelect from './RatingSelect.svelte'
+
+const dispatch = createEventDispatcher();
 
 let text = '';
 let rating = 10;
@@ -18,14 +21,9 @@ const handleInput = () => {
     console.log(text.length);
     message = `Text must be at least ${min} characters` ;
     btnDisabled = true;
-
-    if (text.length == 1){
-      message = ' ';
-      btnDisabled = true;
-     }
   }
   else{
-    message = ' ';
+    message = '';
     btnDisabled = false;
   }
 }
@@ -37,7 +35,10 @@ const handleSubmit = () => {
       text,
       rating: +rating
     }
-    console.log(newFeedback)
+    // Adding custom event to dispatch that will interact with app.svelte
+    dispatch('add-feedback',newFeedback);
+
+    text = '';
   }
 }
 </script>
