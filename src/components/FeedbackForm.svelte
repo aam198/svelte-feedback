@@ -30,14 +30,12 @@ const handleInput = () => {
 </script>
 
 <Card>
-  <form>
-    <!-- Rating Select -->
     <header>
       <h2>How would you rate your service with us?</h2>
-
-      <RatingSelect />
-
     </header>
+  <form>
+    
+    <RatingSelect />
 
     <div class="input-group">
       <input type="text" on:input={handleInput} bind:value= {text} placeholder="Tell us something that keeps you coming back">

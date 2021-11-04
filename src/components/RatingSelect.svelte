@@ -6,8 +6,7 @@ let selected = 10
 const dispatch = createEventDispatcher();
 
 const onChange = (e) => {
-  selected = e.currentTarget.value;
-  dispatch('rating-select', selected);
+  console.log(1)
 }
 </script>
 
@@ -85,7 +84,6 @@ const onChange = (e) => {
     font-size: 1.2rem;
     border: 1px solid hsl(var(--shadow-color)/0.7);
     transition: 0.3s;
-    margin: 1%;
   } 
 
   .rating li label{
