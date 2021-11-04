@@ -6,7 +6,8 @@ let selected = 10
 const dispatch = createEventDispatcher();
 
 const onChange = (e) => {
-  console.log(1)
+  selected = e.currentTarget.value;
+  dispatch('rating-select', selected); 
 }
 </script>
 
