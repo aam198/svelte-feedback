@@ -1,5 +1,6 @@
 <script>
   import Card from './Card.svelte'
+  import { fade, scale, fly } from 'svelte/transition'
   import { createEventDispatcher} from 'svelte'
   export let feedback = []
 
@@ -15,6 +16,7 @@
 
 
 {#each feedback as fb (fb.id)}
+<div in:scale out:fly="{{y:200, duration: 500}}">
 <Card>
   <div class="rating-display">
     {fb.rating}
@@ -24,7 +26,7 @@
     {fb.text}
   </p>
 </Card>
-
+</div>
 {/each}
 
 
