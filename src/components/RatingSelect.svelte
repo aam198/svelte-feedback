@@ -116,7 +116,7 @@ const onChange = (e) => {
   }
 
   .rating li:active{
-    transform: scale(1.7);
+    transform: scale(1.5);
   }
   
   [type="radio"]:checked ~ label{

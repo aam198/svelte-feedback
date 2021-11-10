@@ -1,11 +1,10 @@
 <script>
 import {v4 as uuidv4} from 'uuid'
-import { createEventDispatcher } from 'svelte'
-import Card from './Card.svelte';
-import Button from './Button.svelte';
+import {FeedbackStore} from '../stores'
+import Card from './Card.svelte'
+import Button from './Button.svelte'
 import RatingSelect from './RatingSelect.svelte'
 
-const dispatch = createEventDispatcher();
 
 let text = '';
 let rating = 10;
@@ -35,9 +34,12 @@ const handleSubmit = () => {
       text,
       rating: +rating
     }
-    // Adding custom event to dispatch that will interact with app.svelte
-    dispatch('add-feedback',newFeedback);
 
+    FeedbackStore.update((currentFeedback) => {
+      return [newFeedback, ...currentFeedback]
+    })
+  
+    //clears the form after submission
     text = '';
   }
 }
