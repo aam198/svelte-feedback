@@ -118,6 +118,18 @@ const onChange = (e) => {
   [type="radio"]:checked ~ label{
     background: hsl(var(--rating-clr));
     color: hsl(var(--bkg-clr));
+    animation: scaleIn 500ms ease-in;
+  }
+
+  @keyframes scaleIn {
+    from{
+      transform: translate(0.5, 0.5);
+      opacity: 0;
+    }
+    to {
+      transform: translate(4.5,4.5);
+      opacity: 0.7;
+    }
   }
 
 </style>
