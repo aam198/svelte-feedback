@@ -17,7 +17,7 @@ const handleSelect = e => rating = e.detail;
 
 const handleInput = () => {
   if(text.trim().length <= min){
-    console.log(text.length);
+    console.log(text.trim().length);
     message = `Text must be at least ${min} characters` ;
     btnDisabled = true;
   }
