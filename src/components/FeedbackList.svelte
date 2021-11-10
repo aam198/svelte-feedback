@@ -1,21 +1,38 @@
 <script>
+  // import {onMount, onDestroy} from 'svelte'
+  import {FeedbackStore} from '../stores'
   import Card from './Card.svelte'
-  import { fade, scale, fly } from 'svelte/transition'
-  import { createEventDispatcher} from 'svelte'
-  export let feedback = []
+  import { scale, fly } from 'svelte/transition'
 
-  console.log(feedback)
+  // Optional way to subscribe/unsubscribe:
+      // let feedback = []
+
+      // console.log(feedback)
 
 
-  const dispatch = createEventDispatcher();
+      // const unsubscribe = FeedbackStore.subscribe((data) => feedback = data)
+
+      // // unsubscribe/lifecycle method
+      
+      // onMount(()=> {
+      //   console.log('mounted')
+      // })
+
+      // onDestroy(() => {
+      //   unsubscribe()
+      // })
+
   const handleDelete = (itemId) =>{
-    dispatch('delete-feedback', itemId)
+    FeedbackStore.update((currentFeedback) => {
+      return currentFeedback.filter(item => item.id != itemId)
+    })
   }
+
 </script>
 
 
 
-{#each feedback as fb (fb.id)}
+{#each $FeedbackStore as fb (fb.id)}
 <div in:scale out:fly="{{y:200, duration: 500}}">
 <Card>
   <div class="rating-display">
@@ -62,8 +79,6 @@
   .close:hover{
     color: hsl(355 68% 59%);
     transform: scale(1.2);
-    
-    
   }
 
   .close:active{

@@ -2,7 +2,6 @@
   export let count
   export let average
 
-
 </script>
 
 <div class="feedback-stats">

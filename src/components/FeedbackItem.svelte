@@ -1,13 +1,8 @@
 <script>
-  import { createEventDispatcher} from 'svelte'
-  import Card from './Card.svelte'
+ import Card from './Card.svelte'
 
   export let item
 
-  const dispatch = createEventDispatcher();
-  const handleDelete = (itemId) =>{
-    dispatch('delete-feedback', itemId)
-  }
 </script>
 
 
@@ -15,7 +10,6 @@
   <div class="rating-display">
     {item.rating}
   </div>
-  <button class="close" on:click={() => handleDelete(item.id)}>X</button>
   <p class="text-display">
     {item.text}
   </p>
@@ -37,24 +31,6 @@
     padding: 8px;
     text-align: center;
     font-size: 19px;
-  }
-
-  .close{
-    color: hsl(var(--close));
-    font-size: 18px;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    cursor: pointer;
-    background: none;
-    border: 0;
-  }
-  .close:hover{
-    color: #f67d87
-  }
-
-  .close:active{
-    background: none;
   }
 
 </style>
